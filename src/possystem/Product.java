@@ -27,7 +27,7 @@ public class Product {
         return productId;
     }
 
-    public final void setProductId(String productId) {
+    public final void setProductId(final String productId) {
         this.productId = productId;
     }
 
@@ -35,7 +35,7 @@ public class Product {
         return productDescription;
     }
 
-    public final void setProductDescription(String productDescription) {
+    public final void setProductDescription(final String productDescription) {
         this.productDescription = productDescription;
     }
 
@@ -43,7 +43,7 @@ public class Product {
         return price;
     }
 
-    public final void setPrice(double price) {
+    public final void setPrice(final double price) {
         this.price = price;
     }
 
@@ -51,7 +51,7 @@ public class Product {
         return discountStrategy;
     }
 
-    public final void setDiscountStrategy(DiscountStrategy discountStrategy) {
+    public final void setDiscountStrategy(final DiscountStrategy discountStrategy) {
         this.discountStrategy = discountStrategy;
     }
 }
