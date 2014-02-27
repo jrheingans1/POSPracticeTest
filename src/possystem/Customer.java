@@ -16,15 +16,14 @@ public class Customer {
     private String city;
     private String state;
     private String zip;
-    private double qtyPurchased;
 
-    public Customer(String name, String address, String city, String state, String zip, double qtyPurchased) {
+    public Customer(String name, String address, String city, String state, String zip) {
         setName(name);
         setAddress(address);
         setCity(city);
         setState(state);
         setZip(zip);
-        setQtyPurchased(qtyPurchased);
+
     }
 
     public final String getName() {
@@ -67,11 +66,4 @@ public class Customer {
         this.zip = zip;
     }
 
-    public final double getQtyPurchased() {
-        return qtyPurchased;
-    }
-
-    public final void setQtyPurchased(final double qtyPurchased) {
-        this.qtyPurchased = qtyPurchased;
-    }
 }
