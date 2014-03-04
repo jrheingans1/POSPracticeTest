@@ -11,31 +11,29 @@ package possystem;
  */
 public class OutputDivider {
 
+    public static enum OutputStrategies {
 
-        public static enum OutputStrategies {
+        CONSOLE, GUI;
+    }
+    private static OutputDivider instance;
 
-            CONSOLE, GUI;
+    public static OutputDivider getInstance() {
+        if (instance == null) {
+            instance = new OutputDivider();
         }
-        private static OutputDivider instance;
-
-        public static OutputDivider getInstance() {
-            if (instance == null) {
-                instance = new OutputDivider();
-            }
-            return instance;
-        }
-
-        public OutputStrategy getOutput(OutputStrategies outputType) {
-            OutputStrategy o = null;
-            switch (outputType) {
-                case CONSOLE:
-                    o = new ConsoleOutput();
-                    break;
-                case GUI:
-                    o = new GUIOutput();
-                    break;
-            }
-            return o;
-        }
+        return instance;
     }
 
+    public OutputStrategy getOutput(OutputStrategies outputType) {
+        OutputStrategy o = null;
+        switch (outputType) {
+            case CONSOLE:
+                o = new ConsoleOutput();
+                break;
+            case GUI:
+                o = new GUIOutput();
+                break;
+        }
+        return o;
+    }
+}

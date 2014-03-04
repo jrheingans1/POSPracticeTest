@@ -40,6 +40,7 @@ public class LineItem {
         return product.getPrice() * this.getQtyPurchased();
     }
 
+    @Override
     public String toString() {
         return product.getProductId() + " " + product.getProductDescription()
                 + " " + product.getPrice() + " " + this.getQtyPurchased()

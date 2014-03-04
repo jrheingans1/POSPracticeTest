@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author jrheingans1
  */
-public class GUIOutput implements OutputStrategy{
+public class GUIOutput implements OutputStrategy {
 
     public void getOutput(String output) {
         JOptionPane.showMessageDialog(null, output);

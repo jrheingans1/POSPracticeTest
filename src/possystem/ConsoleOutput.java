@@ -11,6 +11,7 @@ package possystem;
  */
 public class ConsoleOutput implements OutputStrategy {
 
+    @Override
     public void getOutput(String output) {
         System.out.println(output);
     }

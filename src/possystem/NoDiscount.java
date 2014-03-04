@@ -11,7 +11,7 @@ package possystem;
  */
 public class NoDiscount implements DiscountStrategy {
 
-   @Override
+    @Override
     public double getDiscountedTotal(double price, double qty) {
         return price * qty - getAmountSaved(price, qty);
     }

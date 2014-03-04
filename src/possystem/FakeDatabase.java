@@ -24,7 +24,7 @@ public class FakeDatabase {
         new Product("5", "Women's Scarf", 5.00, new QtyDiscount(.50, 2))};
 
     public final Customer findCustomer(final String custId) {
-           
+
         Customer customer = null;
         for (Customer c : customers) {
             if (custId.equals(c.getCustomerId())) {
@@ -36,7 +36,7 @@ public class FakeDatabase {
     }
 
     public final Product findProduct(final String prodId) {
-          
+
         Product product = null;
         for (Product p : products) {
             if (prodId.equals(p.getProductId())) {

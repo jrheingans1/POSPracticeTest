@@ -36,7 +36,6 @@ public class Customer {
         this.CustomerId = CustomerId;
     }
 
-    
     public final String getName() {
         return name;
     }

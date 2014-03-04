@@ -31,7 +31,6 @@ public class Reciept {
     private static final String FORMAT_BAR = " | ";
     private static final double ZERO_ZERO = 0.0;
     private static final String MINUS = "-";
-    private static final String TAX = "Tax ";
 
     public Reciept(String customerId) {
         this.db = new FakeDatabase();
