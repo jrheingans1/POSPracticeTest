@@ -20,11 +20,11 @@ public class FakeDatabase {
         new Product("1", "Women's Sweatshirt", 19.95, new PercentOffDiscount(0.15)),
         new Product("2", "Men's T-Shirt", 3.25, new QtyDiscount(.10, 3)),
         new Product("3", "Men's Shoes", 29.99, new NoDiscount()),
-        new Product("4", "Skirt", 24.75, new NoDiscount()),
+        new Product("4", "Woman's T-Shirt", 24.75, new NoDiscount()),
         new Product("5", "Women's Scarf", 5.00, new QtyDiscount(.50, 2))};
 
     public final Customer findCustomer(final String custId) {
-        // validation is needed	      
+           
         Customer customer = null;
         for (Customer c : customers) {
             if (custId.equals(c.getCustomerId())) {
@@ -36,7 +36,7 @@ public class FakeDatabase {
     }
 
     public final Product findProduct(final String prodId) {
-        // validation is needed	       
+          
         Product product = null;
         for (Product p : products) {
             if (prodId.equals(p.getProductId())) {
