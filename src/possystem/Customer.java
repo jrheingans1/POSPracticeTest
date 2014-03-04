@@ -11,13 +11,15 @@ package possystem;
  */
 public class Customer {
 
+    private String CustomerId;
     private String name;
     private String address;
     private String city;
     private String state;
     private String zip;
 
-    public Customer(String name, String address, String city, String state, String zip) {
+    public Customer(String customerId, String name, String address, String city, String state, String zip) {
+        setCustomerId(customerId);
         setName(name);
         setAddress(address);
         setCity(city);
@@ -26,6 +28,15 @@ public class Customer {
 
     }
 
+    public final String getCustomerId() {
+        return CustomerId;
+    }
+
+    public final void setCustomerId(String CustomerId) {
+        this.CustomerId = CustomerId;
+    }
+
+    
     public final String getName() {
         return name;
     }
