@@ -17,7 +17,7 @@ public class FakeDatabase {
     };
 
     Product[] products = {
-        new Product("1", "Women's Sweatshirt", 19.95, new PercentOffDiscount(0.15)),
+        new Product("1", "Women's Sweatshirt", 19.95, new EasterHolidayDiscount(.30)),
         new Product("2", "Men's T-Shirt", 3.25, new QtyDiscount(.10, 3)),
         new Product("3", "Men's Shoes", 29.99, new NoDiscount()),
         new Product("4", "Woman's T-Shirt", 24.75, new NoDiscount()),

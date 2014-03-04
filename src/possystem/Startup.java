@@ -18,9 +18,9 @@ public class Startup {
 
         cr.addItemToSale("1", 2);
 
-        cr.addItemToSale("4", 1);
+        cr.addItemToSale("3", 1);
 
-        cr.addItemToSale("5", 4);
+        cr.addItemToSale("2", 4);
 
         cr.produceOutput();
     }
