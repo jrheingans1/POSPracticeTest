@@ -17,7 +17,7 @@ public class Reciept {
 
     private Customer customer;
     private LineItem[] lineItem = new LineItem[0];
-    private FakeDatabase db;
+    private final FakeDatabase db;
     NumberFormat nf = NumberFormat.getCurrencyInstance();
     Calendar today = Calendar.getInstance();
     String format = "M/d/yyy     hh:mm a";

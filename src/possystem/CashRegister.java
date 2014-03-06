@@ -12,7 +12,7 @@ package possystem;
 public class CashRegister {
 
     private Reciept receipt;
-    private final OutputStrategy output = OutputDivider.getInstance().getOutput(OutputDivider.OutputStrategies.GUI);
+    private final OutputStrategy output = OutputDivider.getInstance().getOutput(OutputDivider.OutputStrategies.CONSOLE);
 
     public CashRegister() {
     }

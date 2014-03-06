@@ -11,7 +11,8 @@ package possystem;
  */
 public class FakeDatabase {
 
-    private Customer[] customers = {new Customer("1", "Josh Pretty", "1002 East Block", "Elgin", "IL", "34492"),
+    private Customer[] customers = {
+        new Customer("1", "Josh Pretty", "1002 East Block", "Elgin", "IL", "34492"),
         new Customer("2", "Katy Purry", "800 West Palm Beach", "Madison", "WI", "53102"),
         new Customer("3", "Justin Bieber", "899 IwishIwasCool", "wannabe", "Ca", "11111")
     };

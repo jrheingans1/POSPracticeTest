@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
  */
 public class GUIOutput implements OutputStrategy {
 
+    @Override
     public void getOutput(String output) {
         JOptionPane.showMessageDialog(null, output);
     }
