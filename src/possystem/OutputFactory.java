@@ -9,17 +9,17 @@ package possystem;
  *
  * @author jrheingans1
  */
-public class OutputDivider {
+public class OutputFactory {
 
     public static enum OutputStrategies {
 
         CONSOLE, GUI;
     }
-    private static OutputDivider instance;
+    private static OutputFactory instance;
 
-    public static OutputDivider getInstance() {
+    public static OutputFactory getInstance() {
         if (instance == null) {
-            instance = new OutputDivider();
+            instance = new OutputFactory();
         }
         return instance;
     }

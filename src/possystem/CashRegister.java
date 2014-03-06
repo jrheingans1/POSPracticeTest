@@ -11,21 +11,23 @@ package possystem;
  */
 public class CashRegister {
 
-    private Reciept receipt;
-    private final OutputStrategy output = OutputDivider.getInstance().getOutput(OutputDivider.OutputStrategies.CONSOLE);
+    private ReceiptStrategy receiptStrategy;
+    private OutputStrategy output;
 
     public CashRegister() {
     }
 
-    public void startNewSale(String customerId) {
-        receipt = new Reciept(customerId);
+    public void startNewSale(OutputStrategy output, ReceiptStrategy receiptStrategy, String customerId) {
+        this.output = output;
+        this.receiptStrategy = receiptStrategy;
+        this.receiptStrategy.setCustomerId(customerId);
     }
 
     public void addItemToSale(String productId, int qty) {
-        receipt.addLineItem(productId, qty);
+        receiptStrategy.addLineItem(productId, qty);
     }
 
     public void produceOutput() {
-        output.getOutput(receipt.getReceipt());
+        output.getOutput(receiptStrategy.getOutput());
     }
 }

@@ -12,9 +12,12 @@ package possystem;
 public class Startup {
 
     public static void main(String[] args) {
+        ReceiptStrategy receiptStrategy = receiptStrategy = ReceiptFactory.getInstance().getReceiptStrategy(ReceiptFactory.ReceiptStrategies.RECEIPT);
+        OutputStrategy output = OutputFactory.getInstance().getOutput(OutputFactory.OutputStrategies.CONSOLE);
+        
         CashRegister cr = new CashRegister();
 
-        cr.startNewSale("3");
+        cr.startNewSale(output,receiptStrategy, "1");
 
         cr.addItemToSale("1", 2);
 

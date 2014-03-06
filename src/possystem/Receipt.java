@@ -13,8 +13,8 @@ import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class Reciept {
-
+public class Receipt implements ReceiptStrategy {
+    private String customerId;
     private Customer customer;
     private LineItem[] lineItem = new LineItem[0];
     private final FakeDatabase db;
@@ -31,8 +31,12 @@ public class Reciept {
     private static final String FORMAT_BAR = " | ";
     private static final double ZERO_ZERO = 0.0;
     private static final String MINUS = "-";
+    
+    public Receipt() {
+        this.db = new FakeDatabase();
+    }
 
-    public Reciept(String customerId) {
+    public Receipt(String customerId) {
         this.db = new FakeDatabase();
         customer = lookupCustomerById(customerId);
     }
@@ -42,6 +46,7 @@ public class Reciept {
         return customer;
     }
 
+    @Override
     public void addLineItem(String productId, int qty) {
         LineItem item = new LineItem(db.findProduct(productId), qty);
         addToArray(item);
@@ -62,6 +67,7 @@ public class Reciept {
         return str;
     }
 
+    @Override
     public double getTotalBeforeDiscount() {
         double grandTotal = ZERO_ZERO;
         for (LineItem item : lineItem) {
@@ -70,6 +76,7 @@ public class Reciept {
         return grandTotal;
     }
 
+    @Override
     public double getTotalAfterDiscount() {
         double grandDiscountTotal = ZERO_ZERO;
         for (LineItem item : lineItem) {
@@ -78,17 +85,19 @@ public class Reciept {
         return grandDiscountTotal;
     }
 
+    @Override
     public double getSavings() {
         double savings = ZERO_ZERO;
         savings += (getTotalBeforeDiscount() - getTotalAfterDiscount());
         return savings;
     }
 
+    @Override
     public String getTime() {
         return sdf.format(today.getTime());
     }
 
-    public String getReceipt() {
+    public String getOutput() {
         String output = THANK_YOU + NEXT_LINE + NEXT_LINE;
         output += getTime() + NEXT_LINE;
         output += getProductList();
@@ -98,4 +107,13 @@ public class Reciept {
         output += NEXT_LINE + NEXT_LINE + COME_AGAIN + customer.getName() + EXCLAMATION;
         return output;
     }
+
+    public String getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(String customerId) {
+        customer = lookupCustomerById(customerId);
+    }
+    
 }
